@@ -2,7 +2,7 @@
 
 # needs a GitHub branch or tag name -and- a org/project
 
-# exmaple:   bash build_all_the_things.sh master machinecoin/machinecoin
+# exmaple:   bash build_all_the_things.sh master machinecoin-project/machinecoin-core
 # this will build:
 
 #     - Mac, Linux, Windows binaries, 32 and 64 bit as well as ARM
@@ -27,7 +27,7 @@ check_mac () {
   fi
 }
 
-fall_back_branch_or_tag="v1.14.1rc2"
+fall_back_branch_or_tag="master"
 branch_or_tag=
 if [ -z "${1}" ]; then
   branch_or_tag=`get_latest_tag`
