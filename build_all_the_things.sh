@@ -10,7 +10,7 @@ green="\033[38;5;40m"
 magenta="\033[38;5;200m"
 cyan="\033[38;5;87m"
 reset="\033[0m"
-THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+THISDIR="$(pwd)"
 masterApiEndpoint="https://api.github.com"
 repo="https://github.com/machinecoin-project/machinecoin-core"
 
@@ -45,7 +45,7 @@ fi
 
 $THISDIR/build_builder.sh
 
-platforms=("mac" "windows" "linux")
+platforms=("osx" "win" "linux")
 
 for platform in "${platforms[@]}"; do
   check_mac "${platform}"
