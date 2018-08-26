@@ -17,6 +17,7 @@ update-locale LANG=en_US.UTF-8 && \
 bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/Nigho/gitian-builder /shared/gitian-builder' && \
 useradd -d /home/ubuntu -m -s /bin/bash ubuntu && \
 chown -R ubuntu.ubuntu /shared/ && \
+rm -rf /shared/result/out/ && \
 chown root.root /shared/gitian-builder/target-bin/grab-packages.sh && \
 chmod 755 /shared/gitian-builder/target-bin/grab-packages.sh && \
 echo 'ubuntu ALL=(root) NOPASSWD:/usr/bin/apt-get,/shared/gitian-builder/target-bin/grab-packages.sh' > /etc/sudoers.d/ubuntu && \
