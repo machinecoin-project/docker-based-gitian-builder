@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker rm builder
-docker rmi builder
+docker rm -f builder
+docker rmi -f builder
