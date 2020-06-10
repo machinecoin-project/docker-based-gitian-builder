@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t builder -f ./Dockerfile . 
+docker build --no-cache -t builder -f ./Dockerfile . 
