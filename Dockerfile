@@ -29,6 +29,6 @@ USER ubuntu
 RUN printf "[[ -d /shared/machinecoin-core ]] || \
 git clone -b \$1 --depth 1 \$2 /shared/machinecoin-core && \
 cd /shared/gitian-builder; \
-./bin/gbuild --skip-image --commit machinecoin=\$1 --url machinecoin=\$2 \$3" > /home/ubuntu/runit.sh
+./bin/gbuild -j 4 -m 6000 --skip-image --commit machinecoin=\$1 --url machinecoin=\$2 \$3" > /home/ubuntu/runit.sh
 CMD ["master","https://github.com/machinecoin-project/machinecoin-core.git","../machinecoin-core/contrib/gitian-descriptors/gitian-linux.yml"]
 ENTRYPOINT ["bash", "/home/ubuntu/runit.sh"]
